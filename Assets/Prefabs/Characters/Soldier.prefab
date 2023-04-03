@@ -1510,11 +1510,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b56e495ce3bfad45bc6719315383c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDuration: 1
-  attackRange: 0.5
+  attackPoint: {fileID: 0}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
+  attackRange: 0.5
+  movementController: {fileID: 0}
+  animator: {fileID: 0}
+  rollForce: 0
+  isAttacking: 0
+  isRolling: 0
 --- !u!114 &4505091311862023396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1536,6 +1541,9 @@ MonoBehaviour:
   jumpClips:
   - {fileID: 8300000, guid: 988ea27ec9068e94b91318544fd4ca6e, type: 3}
   audioController: {fileID: 0}
+  combatController: {fileID: 0}
+  rb: {fileID: 0}
+  isGrounded: 0
 --- !u!1 &3652810618612874562
 GameObject:
   m_ObjectHideFlags: 0
