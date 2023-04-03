@@ -257,6 +257,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &71074694 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3622061214947800114, guid: 8b0c801902417af4d92151e30382840b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4505091311156645607}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &76989489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1347,7 +1353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CollideAgainst:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 192
   m_IgnoreTag: 
   m_TransparentLayers:
     serializedVersion: 2
@@ -3906,7 +3912,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032973536}
-  m_LocalRotation: {x: -0.0065089497, y: 0.000000017191407, z: 1.1190039e-10, w: 0.99997884}
+  m_LocalRotation: {x: -0.0065089525, y: -0.000000017292013, z: -1.1255528e-10, w: 0.99997884}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6288,7 +6294,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 4505091311156645607}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 71074694}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e219e9ed90746a641b59ca3e3b373a6e, type: 3}
@@ -6300,7 +6306,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 4505091311156645607}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 71074694}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b56e495ce3bfad45bc6719315383c44, type: 3}
@@ -6318,6 +6324,26 @@ Rigidbody:
     type: 3}
   m_PrefabInstance: {fileID: 4505091311156645607}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &543450652365185144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71074694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a169e6194e6b5145a6496ac2d3f9c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 57656463}
+  enemySearchRadius: 10
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  lockOnInput: LockOn
+  freeLookCamera: {fileID: 400174061}
+  cameraSensitivity: 10
 --- !u!1001 &4505091311156645607
 PrefabInstance:
   m_ObjectHideFlags: 0

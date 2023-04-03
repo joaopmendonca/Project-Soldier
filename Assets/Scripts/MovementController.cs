@@ -27,6 +27,7 @@ public class MovementController : MonoBehaviour
 
     private void Update()
     {
+        
         float sensitivity = 1.0f;
         float verticalInput = Input.GetAxis("Vertical") * sensitivity;
         float horizontalInput = Input.GetAxis("Horizontal") * sensitivity;
