@@ -1397,7 +1397,7 @@ GameObject:
   - component: {fileID: 4505091311862023397}
   - component: {fileID: 4505091311862023396}
   m_Layer: 0
-  m_Name: Soldier
+  m_Name: Soldier_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
