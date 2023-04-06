@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2755853404105428200}
   - component: {fileID: -5600751995670669379}
   - component: {fileID: -7359184144094518054}
+  - component: {fileID: 6730041327551766895}
   m_Layer: 7
   m_Name: Porky_Prefab
   m_TagString: Enemies
@@ -107,8 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2e59d5bed6d144fb06890513b0b043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
-  rotationSpeed: 5
 --- !u!114 &-7359184144094518054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,11 +125,26 @@ MonoBehaviour:
   percHealth: 0
   enemyName: 
   movementSpeed: 0
+  rotationSpeed: 0
+  attackRange: 0
   player: {fileID: 0}
   crystal: {fileID: 0}
   playerDetectionRange: 10
   crystalDetectionRange: 30
-  rb: {fileID: 184586772513776720}
+--- !u!136 &6730041327551766895
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030938800840864008}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.2573285
+  m_Height: 1.6147676
+  m_Direction: 1
+  m_Center: {x: -1.6537986e-14, y: 0.80351186, z: -0.037749052}
 --- !u!1 &2664786740990476721
 GameObject:
   m_ObjectHideFlags: 0

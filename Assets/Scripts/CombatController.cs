@@ -3,9 +3,11 @@ using System.Collections;
 
 public class CombatController : MonoBehaviour
 {
-    [SerializeField] private Transform attackPoint;
+    [SerializeField] private Transform weaponTransform;
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private float attackRange = 0.5f;
+
+    [SerializeField] private Collider WeaponCollider;
 
     [Header("Variaveis de Acesso")]
     [SerializeField] private MovementController movementController;
@@ -29,18 +31,17 @@ public class CombatController : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-
             lastPosition = transform.position;
             StartAttack();
         }    
 
         if (Input.GetButtonDown("Fire3") && !isAttacking && !isRolling && movementController.isGrounded)
         {
-         Roll();
+            Roll();
         }
         else if (Input.GetButtonDown("Fire3") && isRolling)
         {
-        Debug.Log("<color=orange>You are already rolling!</color>");
+            Debug.Log("<color=orange>You are already rolling!</color>");
         }       
     }
 
@@ -48,6 +49,7 @@ public class CombatController : MonoBehaviour
     {
         if(!isAttacking && !isRolling && movementController.isGrounded)
         {
+            WeaponCollider.enabled  = true;
             isAttacking = true;
             animator.SetTrigger("isAttacking");
         }
@@ -55,24 +57,14 @@ public class CombatController : MonoBehaviour
         {
             return;
         }
-        
     }
 
-    private void OnAttack()
-    {
-        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayer);
-
-        foreach (Collider enemy in hitEnemies)
-        {
-            Debug.Log("<color=#90EE90>Atigiu inimigo:</color> " + enemy.name);
-        }
-
-       
-    }
+   
 
     public void EndAttack()
     {
          isAttacking = false;
+         WeaponCollider.enabled  = false;
     }
 
     public void Roll()
@@ -94,6 +86,6 @@ public class CombatController : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        Gizmos.DrawWireSphere(weaponTransform.position, attackRange);
     }
 }

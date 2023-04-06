@@ -19,27 +19,35 @@ public class EnemyMovement : MonoBehaviour
         SetDestination();
     }
 
-    private void SetDestination()
+  private void SetDestination()
+{
+    float distanceToPlayer = Vector3.Distance(transform.position, enemyController.player.position);
+    float distanceToCrystal = Vector3.Distance(transform.position, enemyController.crystal.position);
+
+    if (distanceToPlayer <= enemyController.playerDetectionRange)
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, enemyController.player.position);
-        float distanceToCrystal = Vector3.Distance(transform.position, enemyController.crystal.position);
+        target = enemyController.player;
+    }
+    else if (distanceToCrystal <= enemyController.crystalDetectionRange)
+    {
+        target = enemyController.crystal;
+    }
 
-        if (distanceToPlayer <= enemyController.playerDetectionRange)
-        {
-            target = enemyController.player;
-        }
-        else if (distanceToCrystal <= enemyController.crystalDetectionRange)
-        {
-            target = enemyController.crystal;
-        }
-
-        if (target != null)
+    if (target != null)
+    {
+        float distanceToTarget = Vector3.Distance(transform.position, target.position);
+        if (distanceToTarget > enemyController.attackRange)
         {
             Vector3 moveDirection = (target.position - transform.position).normalized;
             rigidBody.velocity = moveDirection * enemyController.movementSpeed;
             RotateTowards(target.position);
         }
+        else
+        {
+            rigidBody.velocity = Vector3.zero;
+        }
     }
+}
 
     private void RotateTowards(Vector3 targetPosition)
     {
