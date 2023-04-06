@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 361820466261339058}
   - component: {fileID: 184586772513776720}
   - component: {fileID: 184586772513776721}
-  - component: {fileID: -7859719972751995990}
+  - component: {fileID: 2755853404105428200}
+  - component: {fileID: -5600751995670669379}
+  - component: {fileID: -7359184144094518054}
   m_Layer: 7
   m_Name: Porky_Prefab
   m_TagString: Enemies
@@ -35,7 +37,6 @@ Transform:
   - {fileID: 4233769876305438063}
   - {fileID: 2606496572707220530}
   - {fileID: 7788730915060085275}
-  - {fileID: 1213813667453426833}
   - {fileID: 5546920550167411874}
   - {fileID: 2982777415666300763}
   - {fileID: 1080109591154411095}
@@ -72,7 +73,43 @@ CapsuleCollider:
   m_Height: 1.6147676
   m_Direction: 1
   m_Center: {x: -1.6537986e-14, y: 0.80351186, z: -0.037749052}
---- !u!114 &-7859719972751995990
+--- !u!195 &2755853404105428200
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030938800840864008}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.25
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.62
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &-5600751995670669379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030938800840864008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a2e59d5bed6d144fb06890513b0b043, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 2
+  rotationSpeed: 5
+--- !u!114 &-7359184144094518054
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,9 +121,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e478d85b8079ff42a7618d3b943e0eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 1fec705e9653d314594e55fed5b4b140, type: 2}
+  enemyData: {fileID: 11400000, guid: 32779813beb776d42bc8519890faf3a2, type: 2}
+  currentHealth: 0
   percHealth: 0
   enemyName: 
+  movementSpeed: 0
+  player: {fileID: 0}
+  crystal: {fileID: 0}
+  playerDetectionRange: 10
+  crystalDetectionRange: 30
+  rb: {fileID: 184586772513776720}
 --- !u!1 &2664786740990476721
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +162,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 361820466261339058}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7888329004649259883
 MeshFilter:
@@ -284,7 +328,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 361820466261339058}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3743795210805100493
 MeshFilter:
@@ -336,37 +380,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &4331990559257188898
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1213813667453426833}
-  m_Layer: 0
-  m_Name: Empty.001
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1213813667453426833
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4331990559257188898}
-  m_LocalRotation: {x: 0.7071069, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 1.0500001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 361820466261339058}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6839752980368277455
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +411,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 361820466261339058}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6796614945148841249
 MeshFilter:

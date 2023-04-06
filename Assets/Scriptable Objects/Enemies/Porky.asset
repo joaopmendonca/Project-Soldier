@@ -9,12 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79315e8c3bf758d458a5053a5ec574c1, type: 3}
+  m_Script: {fileID: 11500000, guid: de8e88e4269a0264c8c4ba780380ec59, type: 3}
   m_Name: Porky
   m_EditorClassIdentifier: 
   enemyName: Porky
   maxHealth: 100
-  movementSpeed: 3
+  movementSpeed: 2
+  rotationSpeed: 5
+  attackRange: 1
   baseDamage: 10
   enemyPrefab: {fileID: 1030938800840864008, guid: 5007a82393a367c459d79c694b768684,
     type: 3}
