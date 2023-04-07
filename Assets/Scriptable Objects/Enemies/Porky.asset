@@ -17,6 +17,7 @@ MonoBehaviour:
   movementSpeed: 2
   rotationSpeed: 5
   attackRange: 1
-  baseDamage: 10
+  damage: 10
+  armor: 10
   enemyPrefab: {fileID: 1030938800840864008, guid: 5007a82393a367c459d79c694b768684,
     type: 3}

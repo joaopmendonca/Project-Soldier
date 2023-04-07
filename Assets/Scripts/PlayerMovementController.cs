@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MovementController : MonoBehaviour
+public class PlayerMovementController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 4f;
     [SerializeField] private float turnSpeed = 5f;
@@ -10,7 +10,7 @@ public class MovementController : MonoBehaviour
 
     [Header("Variaveis de Acesso")]
     [SerializeField] private AudioController audioController;
-    [SerializeField] private CombatController combatController;   
+    [SerializeField] private PlayerCombatController playerCombatController;   
     public Rigidbody rb;
     private Animator animator;
     public bool isGrounded;
@@ -68,7 +68,7 @@ public class MovementController : MonoBehaviour
    private void Move()
 {    
     
-    if (combatController.isAttacking || combatController.isRolling)
+    if (playerCombatController.isAttacking || playerCombatController.isRolling)
     {
         return;
     }
@@ -86,7 +86,7 @@ public class MovementController : MonoBehaviour
 
    private void Rotate()
 {    
-    if (combatController.isAttacking || combatController.isRolling)
+    if (playerCombatController.isAttacking || playerCombatController.isRolling)
         
         return;
 

@@ -9,9 +9,8 @@ public class Enemy : ScriptableObject
     public float movementSpeed;
     public float rotationSpeed;
     public float attackRange;
-    public int baseDamage;
+    public int damage;    
+    public int armor; 
     public GameObject enemyPrefab;
-
-
     
 }

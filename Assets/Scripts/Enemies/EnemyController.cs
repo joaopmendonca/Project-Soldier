@@ -12,6 +12,8 @@ public class EnemyController : MonoBehaviour
     public float movementSpeed;
     public float rotationSpeed;
     public float attackRange;
+    public int armor;
+    public int damage;
 
     [Header("Destination Settings")]
     public Transform player;
@@ -29,6 +31,8 @@ public class EnemyController : MonoBehaviour
         movementSpeed = enemyData.movementSpeed;
         rotationSpeed = enemyData.rotationSpeed;
         attackRange = enemyData.attackRange;
+        armor = enemyData.armor;
+        damage = enemyData.damage;
 
         // Busca o jogador pela tag "Player"
         player = GameObject.FindWithTag("Player").transform;
@@ -60,13 +64,19 @@ public class EnemyController : MonoBehaviour
     }
 }
 
-   public void TakeDamage(int damage)
+ public void TakeDamage(int damage)
 {
     Debug.Log("TakeDamage called with damage: " + damage);
 
-    currentHealth -= damage;
+    // Calcula o dano reduzido pela armadura do inimigo
+    float damageReduction = (float)armor / 100f; // Calcula o percentual de redução de dano com base na armadura
+    int reducedDamage = Mathf.RoundToInt(damage * (1f - damageReduction)); // Aplica a redução de dano
+    int actualDamage = Mathf.Max(1, reducedDamage); // Garante que o dano mínimo seja de 1
+
+    // Aplica o dano reduzido
+    currentHealth -= actualDamage;
     CalculePercHealth();
-    OnEnemyTakeDamage?.Invoke(damage, transform.position);
+    OnEnemyTakeDamage?.Invoke(actualDamage, transform.position);
 
     if (currentHealth <= 0)
     {

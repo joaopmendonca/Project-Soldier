@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class CombatController : MonoBehaviour
+public class PlayerCombatController : MonoBehaviour
 {
     [SerializeField] private Transform weaponTransform;
     [SerializeField] private LayerMask enemyLayer;
@@ -10,7 +10,7 @@ public class CombatController : MonoBehaviour
     [SerializeField] private Collider WeaponCollider;
 
     [Header("Variaveis de Acesso")]
-    [SerializeField] private MovementController movementController;
+    [SerializeField] private PlayerMovementController playerMovementController;
     [SerializeField] private Animator animator;
 
     [Header("Roll")]    
@@ -23,7 +23,7 @@ public class CombatController : MonoBehaviour
     private void Start()
     {
         lastPosition = transform.position;
-        movementController = GetComponent<MovementController>();
+        playerMovementController = GetComponent<PlayerMovementController>();
         animator = GetComponent<Animator>();
     }
 
@@ -35,7 +35,7 @@ public class CombatController : MonoBehaviour
             StartAttack();
         }    
 
-        if (Input.GetButtonDown("Fire3") && !isAttacking && !isRolling && movementController.isGrounded)
+        if (Input.GetButtonDown("Fire3") && !isAttacking && !isRolling && playerMovementController.isGrounded)
         {
             Roll();
         }
@@ -47,7 +47,7 @@ public class CombatController : MonoBehaviour
 
     private void StartAttack()
     {
-        if(!isAttacking && !isRolling && movementController.isGrounded)
+        if(!isAttacking && !isRolling && playerMovementController.isGrounded)
         {
             WeaponCollider.enabled  = true;
             isAttacking = true;
@@ -72,7 +72,7 @@ public class CombatController : MonoBehaviour
         if (!isRolling) 
         {
             animator.SetTrigger("Roll");
-            movementController.rb.AddForce(transform.forward * rollForce, ForceMode.Impulse);
+            playerMovementController.rb.AddForce(transform.forward * rollForce, ForceMode.Impulse);
             isRolling = true;
         }
     }

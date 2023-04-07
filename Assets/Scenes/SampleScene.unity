@@ -1049,7 +1049,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296331514}
-  m_LocalRotation: {x: -0.01761681, y: 0.00000001720371, z: 3.0312156e-10, w: 0.99984485}
+  m_LocalRotation: {x: -0.01761679, y: -0.000000017203712, z: -3.0312122e-10, w: 0.99984485}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11116,6 +11116,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2673362685507492400}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &543450652289313436 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2673362685190621574, guid: 6fc38350502c4b3438196f200e7e8a18,
+    type: 3}
+  m_PrefabInstance: {fileID: 2673362685507492400}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b56e495ce3bfad45bc6719315383c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &543450652289313437 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2673362685190621573, guid: 6fc38350502c4b3438196f200e7e8a18,
+    type: 3}
+  m_PrefabInstance: {fileID: 2673362685507492400}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e219e9ed90746a641b59ca3e3b373a6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2673362685507492400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11188,6 +11212,11 @@ PrefabInstance:
       propertyPath: audioController
       value: 
       objectReference: {fileID: 1568875444}
+    - target: {fileID: 2673362685190621573, guid: 6fc38350502c4b3438196f200e7e8a18,
+        type: 3}
+      propertyPath: playerCombatController
+      value: 
+      objectReference: {fileID: 543450652289313436}
     - target: {fileID: 2673362685190621574, guid: 6fc38350502c4b3438196f200e7e8a18,
         type: 3}
       propertyPath: attackRange
@@ -11203,6 +11232,11 @@ PrefabInstance:
       propertyPath: weaponTransform
       value: 
       objectReference: {fileID: 699839272}
+    - target: {fileID: 2673362685190621574, guid: 6fc38350502c4b3438196f200e7e8a18,
+        type: 3}
+      propertyPath: playerMovementController
+      value: 
+      objectReference: {fileID: 543450652289313437}
     - target: {fileID: 2673362685190621575, guid: 6fc38350502c4b3438196f200e7e8a18,
         type: 3}
       propertyPath: audioController

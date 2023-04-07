@@ -148,6 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c2fe30b5f82c624d92eeebd6f70e24e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 200
-  fallDelay: 0.5
-  fallSpeed: 300
+  moveSpeed: 50
+  fadeDelay: 1
+  fadeSpeed: 2
