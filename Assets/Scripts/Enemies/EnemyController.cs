@@ -4,6 +4,8 @@ public class EnemyController : MonoBehaviour
 {
     public static event Action<int, Vector3> OnEnemyTakeDamage;
 
+    [SerializeField] private EnemyMovement enemyMovement;
+
     [Header("Enemy Characteristics")]
     public Enemy enemyData;
     public float currentHealth;
@@ -14,6 +16,7 @@ public class EnemyController : MonoBehaviour
     public float attackRange;
     public int armor;
     public int damage;
+    public bool isDie;
 
     [Header("Destination Settings")]
     public Transform player;
@@ -92,7 +95,9 @@ public class EnemyController : MonoBehaviour
     private void Die()
     {
         // Adicione aqui o código para lidar com a morte do inimigo
-        Destroy(gameObject);
+        enemyMovement.animator.SetBool("IsDead", true);
+        isDie = true;
+        //Destroy(gameObject);
     }
 
     

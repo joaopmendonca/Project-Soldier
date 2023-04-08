@@ -19,5 +19,5 @@ MonoBehaviour:
   attackRange: 1
   damage: 10
   armor: 10
-  enemyPrefab: {fileID: 1030938800840864008, guid: 5007a82393a367c459d79c694b768684,
+  enemyPrefab: {fileID: 4641358739222384624, guid: d955a602d95f8c24b9b57c31b3f5ab3c,
     type: 3}

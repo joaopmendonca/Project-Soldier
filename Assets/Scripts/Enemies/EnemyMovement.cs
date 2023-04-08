@@ -5,18 +5,26 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     private EnemyController enemyController;
+    public Animator animator;
     private Rigidbody rigidBody;
     private Transform target;
     private void Awake()
     {
         enemyController = GetComponent<EnemyController>();
         rigidBody = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
         rigidBody.freezeRotation = true;
     }
 
     private void FixedUpdate()
     {
-        SetDestination();
+        UpdateAnimations();
+
+        if(enemyController.isDie == false)
+        {
+            SetDestination();
+        }
+       
     }
 
   private void SetDestination()
@@ -64,4 +72,30 @@ public class EnemyMovement : MonoBehaviour
             rigidBody.AddForce(direction * enemyController.movementSpeed, ForceMode.Impulse);
         }
     }
+
+    private void UpdateAnimations()
+    {
+        float currentSpeed = rigidBody.velocity.magnitude;
+        animator.SetFloat("Speed", currentSpeed);
+
+        if (target == null)
+        {
+            animator.SetBool("IsWalking", false);
+        }
+        else
+        {
+            float distanceToTarget = Vector3.Distance(transform.position, target.position);
+
+            if (distanceToTarget > enemyController.attackRange)
+            {
+                animator.SetBool("IsWalking", true);
+
+            }
+            else
+            {
+                animator.SetBool("IsWalking", false);
+            }
+        }
+    }
+
 }
