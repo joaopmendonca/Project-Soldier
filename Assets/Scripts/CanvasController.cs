@@ -6,6 +6,7 @@ public class CanvasController : MonoBehaviour
 {
     [Header("Gameplay")]
     [SerializeField] private GameObject gameplayPanel;
+    [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject enemyStatsWindow;
     [SerializeField] private TextMeshProUGUI enemyNameText;
     [SerializeField] private Image enemyHpBar;
@@ -34,5 +35,13 @@ public class CanvasController : MonoBehaviour
             // Adicione aqui o código para lidar com o caso em que nenhum inimigo está sendo alvejado
             enemyStatsWindow.SetActive(false);
         }
+        if (Input.GetButtonDown("Menu"))
+        {
+            pausePanel.SetActive(true);
+        }
+    }
+    public void ClosePanel(GameObject panel)
+    {
+        panel.SetActive(false);
     }
 }
